@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translate App</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        background-color: rgb(54, 54, 54);
+    }
+    /* div {
+        display: grid;
+        grid-template-columns: 30% 30%;
+        text-align: center;
+        margin: auto;
+    } */
+    button{
+        padding: 5px;
+        background-color: rgb(0, 95, 0);
+        color: white;
+        border-radius: 5px;
+        width: 100px;
+        margin: auto 80px;
+    }
+    select{
+        font-size: 18px;
+        background-color: rgb(45, 52, 94);
+        color: white;
+        margin: auto 70px;
+    }
+    textarea{
+        font-size: 18px;
+    }
+    h3{
+        color: rgb(43, 224, 248);
+    }
+   
+</style>
+<body>
+    <h3>Select Language</h3>
+    <div>
+        <select id="lan1" onchange="main()"></select>
+        <select id="lan2" onchange="main()"></select>
+    </div> 
+    <br>
+    <div>
+        <textarea id="txtInput" oninput="debounce(main, 1000)" cols="30" rows="10"></textarea>
+        <textarea id="txtOut" cols="30" rows="10"></textarea>
+        <div>
+            <button>Speak</button>
+            <button onclick='textToAudio()'>Listen</button>
+        </div>
+        
+    </div>
+
+</body>
+</html>
+<script src="script.js"></script>
+<script src="speechSynthesis.js"></script>
